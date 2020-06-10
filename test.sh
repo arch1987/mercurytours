@@ -10,7 +10,8 @@ export TARGET_HOST="www.amazon.in"
 
 T_DIR=tests/amazon
 # Reporting dir: start fresh
-R_DIR=tests/amazon/report/report1
+R_DIR=tests/amazon/report1
+mkdir -p ${R_DIR}
 
 ./run.sh $TARGET_PATH -Dlog_level.jmeter=DEBUG \ -JTARGET_HOST=${TARGET_HOST} \ -n -t ${T_DIR}/Test_Plan.jmx -l ${T_DIR}/performance_results/amazonresults1.jtl\
 	-e -o ${R_DIR}
