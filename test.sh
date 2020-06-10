@@ -13,6 +13,6 @@ T_DIR=tests/amazon
 R_DIR=tests/amazon/report/ddmmyy_report
 
 ./run.sh $TARGET_PATH -Dlog_level.jmeter=DEBUG \ -JTARGET_HOST=${TARGET_HOST} \
-	-JTARGET_PATH=${TARGET_PATH} \ -n -t ${T_DIR}/Test_Plan.jmx -l ${T_DIR}/performance_results/amazonresults1.jtl\
+	-JTARGET_PATH=${TARGET_HOST}${TARGET_PATH} \ -n -t ${T_DIR}/Test_Plan.jmx -l ${T_DIR}/performance_results/amazonresults1.jtl\
 	-e -o ${R_DIR}
 
