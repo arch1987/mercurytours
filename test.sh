@@ -10,21 +10,9 @@ export TARGET_PATH="/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https
 
 T_DIR=tests/amazon
 # Reporting dir: start fresh
-R_DIR=${T_DIR}/report
-rm -rf ${R_DIR} > /dev/null 2>&1
-mkdir -p ${R_DIR}
-
-/bin/rm -f ${T_DIR}/test-plan.jtl ${T_DIR}/jmeter.log  > /dev/null 2>&1
+R_DIR=tests/amazon/report/ddmmyy_report
 
 ./run.sh $TARGET_PATH -Dlog_level.jmeter=DEBUG \ -JTARGET_HOST=${TARGET_HOST} \
-	-JTARGET_PATH=${TARGET_PATH} \ -n -t ${T_DIR}/Test_Plan.jmx -l ${T_DIR}/test-plan.jtl -j ${T_DIR}/jmeter.log \
+	-JTARGET_PATH=${TARGET_PATH} \ -n -t ${T_DIR}/Test_Plan.jmx -l ${T_DIR}/performance_results/amazonresults1.jtl\
 	-e -o ${R_DIR}
 
-echo "==== jmeter.log ===="
-cat ${T_DIR}/jmeter.log
-
-echo "==== Raw Test Report ===="
-cat ${T_DIR}/test-plan.jtl
-
-echo "==== HTML Test Report ===="
-echo "See HTML test report in ${R_DIR}/index.html"
