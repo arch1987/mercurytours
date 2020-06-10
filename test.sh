@@ -13,5 +13,4 @@ R_DIR=C:amazon.project\report
 mkdir -p ${R_DIR}
 
 ./run.sh -JMeterTARGET_HOST=${TARGET_HOST} -n -t ${T_DIR}/Test_Plan.jmx -l ${R_DIR}/amazonresults_1.jtl
-	-e -o ${R_DIR}
 
